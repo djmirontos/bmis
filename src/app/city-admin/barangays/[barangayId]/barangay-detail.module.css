@@ -1,0 +1,833 @@
+/* ============================================================
+   Barangay Detail Dashboard — Styling
+   Multi-tenant BMIS City Administration
+   ============================================================ */
+
+:root {
+  --primary: #1E3A8A;
+  --accent: #F59E0B;
+  --bg: #F8FAFC;
+  --card: #FFFFFF;
+  --border: #E2E8F0;
+  --text: #0F172A;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+}
+
+/* ══════════════════════════════════════════════════════════
+   ANIMATIONS
+   ══════════════════════════════════════════════════════════ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   CONTAINER & LAYOUT
+   ══════════════════════════════════════════════════════════ */
+
+.container {
+  padding: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeInUp 0.4s ease;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumbItem {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbItem:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.breadcrumbSeparator {
+  color: var(--text-muted);
+  margin: 0 6px;
+}
+
+/* Page Header */
+.pageHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.backButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.backButton:hover {
+  background: #F8FAFC;
+  border-color: var(--primary);
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusBadge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+
+/* ══════════════════════════════════════════════════════════
+   PROFILE CARD
+   ══════════════════════════════════════════════════════════ */
+
+.profileCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.5s ease;
+}
+
+.logoCircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary) 0%, #3B82F6 100%);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+}
+
+.profileInfo {
+  flex: 1;
+}
+
+.profileName {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.profileCity {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0 0 16px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.infoIcon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.infoText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ══════════════════════════════════════════════════════════
+   TAB NAVIGATION
+   ══════════════════════════════════════════════════════════ */
+
+.tabBar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  margin: 0 -32px 0;
+  padding: 0 32px;
+}
+
+.tabList {
+  display: flex;
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tabButton {
+  padding: 14px 20px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.tabButton:hover {
+  color: var(--text);
+}
+
+.tabButtonActive {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* ══════════════════════════════════════════════════════════
+   SECTION LABEL
+   ══════════════════════════════════════════════════════════ */
+
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 24px 0 12px;
+  margin-top: 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   KPI GRID
+   ══════════════════════════════════════════════════════════ */
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.kpiCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.5s ease;
+}
+
+.kpiCard:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.kpiIconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.kpiNumber {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+  line-height: 1;
+}
+
+.kpiLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   TWO COLUMN LAYOUT
+   ══════════════════════════════════════════════════════════ */
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.threeCol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   CHART CARD
+   ══════════════════════════════════════════════════════════ */
+
+.chartCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.chartHeader {
+  margin-bottom: 16px;
+}
+
+.chartTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BAR CHART
+   ══════════════════════════════════════════════════════════ */
+
+.barChart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.barLabel {
+  font-size: 13px;
+  color: var(--text-secondary);
+  width: 100px;
+  flex-shrink: 0;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.barTrack {
+  flex: 1;
+  height: 24px;
+  background: #F3F4F6;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, #3B82F6 100%);
+  border-radius: 6px;
+  transition: width 0.8s ease;
+  min-width: 2px;
+}
+
+.barValue {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  width: 40px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* ══════════════════════════════════════════════════════════
+   TREND CHART (VERTICAL BARS)
+   ══════════════════════════════════════════════════════════ */
+
+.trendChart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 140px;
+  justify-content: space-around;
+}
+
+.trendCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.trendBar {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  transition: height 0.8s ease;
+  min-height: 4px;
+}
+
+.trendLabel {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.trendValue {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text);
+  height: 16px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BLOTTER PROGRESS
+   ══════════════════════════════════════════════════════════ */
+
+.blotterProgress {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.blotterRow {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.blotterRowTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blotterLabel {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.blotterCount {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.blotterTrack {
+  height: 8px;
+  background: #F3F4F6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.blotterFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+  min-width: 2px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   RECENT CARD
+   ══════════════════════════════════════════════════════════ */
+
+.recentCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.recentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.viewAllLink {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.viewAllLink:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Recent List */
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.recentItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #F8FAFC;
+}
+
+.recentItem:last-child {
+  border-bottom: none;
+}
+
+.recentIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.recentBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.recentTitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recentSub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recentBadge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   OFFICIALS SECTION
+   ══════════════════════════════════════════════════════════ */
+
+.officialsSection {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.officialsTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.officialsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.officialsTable thead {
+  background: #F8FAFC;
+  border-bottom: 1px solid var(--border);
+}
+
+.officialsTable th {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 12px 16px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.officialsTable td {
+  padding: 12px 16px;
+  color: var(--text);
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.officialsTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ══════════════════════════════════════════════════════════
+   COMING SOON
+   ══════════════════════════════════════════════════════════ */
+
+.comingSoon {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 48px 24px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.comingSoonIcon {
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.comingSoonTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.comingSoonText {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   EMPTY STATE
+   ══════════════════════════════════════════════════════════ */
+
+.empty {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 24px;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LOADING & ERROR STATES
+   ══════════════════════════════════════════════════════════ */
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.errorState {
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 12px;
+  padding: 24px;
+  color: #DC2626;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+   ══════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 24px;
+  }
+
+  .profileCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .pageHeader {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .pageTitle {
+    font-size: 20px;
+  }
+
+  .profileCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoText {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .tabBar {
+    margin: 0 -16px 0;
+    padding: 0 16px;
+  }
+
+  .tabButton {
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .kpiCard {
+    padding: 12px;
+  }
+
+  .kpiNumber {
+    font-size: 22px;
+  }
+
+  .kpiLabel {
+    font-size: 10px;
+  }
+
+  .trendChart {
+    height: 120px;
+  }
+
+  .chartCard,
+  .recentCard,
+  .officialsSection {
+    padding: 16px;
+  }
+
+  .chartTitle {
+    font-size: 14px;
+  }
+
+  .barLabel {
+    width: 70px;
+    font-size: 12px;
+  }
+
+  .officialsTable th,
+  .officialsTable td {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .profileCard {
+    padding: 12px;
+  }
+
+  .logoCircle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profileName {
+    font-size: 18px;
+  }
+
+  .tabButton {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  .barLabel {
+    width: 60px;
+    font-size: 11px;
+  }
+
+  .infoGrid {
+    gap: 8px;
+  }
+
+  .infoItem {
+    font-size: 12px;
+  }
+}

@@ -47,6 +47,7 @@ interface RecentActivity {
 export default function CityAdminDashboard() {
   const supabase = createClient()
   const [cityUser, setCityUser] = useState<CityUser | null>(null)
+  const [cityInfo, setCityInfo] = useState<{ name: string; province: string } | null>(null)
   const [loading, setLoading] = useState(true)
   const [barangays, setBarangays] = useState<Barangay[]>([])
   const [cityStats, setCityStats] = useState<CityStats>({
@@ -80,10 +81,27 @@ export default function CityAdminDashboard() {
 
         if (cityRole) setCityUser(cityRole)
 
-        // Get all barangays
+        // Get city info based on user's city_id in city_roles
+        const { data: roleData } = await supabase
+          .from('city_roles')
+          .select('city_id, cities(id, name, province, region)')
+          .eq('user_id', user.id)
+          .eq('is_active', true)
+          .maybeSingle()
+
+        if (roleData?.cities) {
+          setCityInfo({
+            name: roleData.cities.name,
+            province: roleData.cities.province,
+          })
+        }
+
+        // Get barangays for this city only
+        const cityId = roleData?.city_id
         const { data: brgyList } = await supabase
           .from('barangays')
           .select('id, name, status, captain_name, subscription_status, onboarded_at, last_activity_at')
+          .eq('city_id', cityId)
           .order('name')
 
         setBarangays(brgyList ?? [])
@@ -193,7 +211,7 @@ export default function CityAdminDashboard() {
       {/* Hero Banner */}
       <div className={styles.heroBanner}>
         <div className={styles.heroLeft}>
-          <p className={styles.heroLabel}>Tangub City Local Government Unit</p>
+          <p className={styles.heroLabel}>{cityInfo?.name?.toUpperCase()} LOCAL GOVERNMENT UNIT</p>
           <h1 className={styles.heroTitle}>Command Center</h1>
           <p className={styles.heroSubtitle}>
             City-wide Barangay Management & Analytics Platform

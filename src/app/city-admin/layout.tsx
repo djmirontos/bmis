@@ -20,6 +20,7 @@ export default function CityAdminLayout({
   const supabase = createClient()
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [cityUser, setCityUser] = useState<{ full_name: string; role: string } | null>(null)
+  const [cityName, setCityName] = useState('City LGU')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -57,6 +58,18 @@ export default function CityAdminLayout({
 
         console.log('City role found:', cityRole)
         setCityUser(cityRole)
+
+        // Get city info
+        const { data: roleWithCity } = await supabase
+          .from('city_roles')
+          .select('city_id, cities(name)')
+          .eq('user_id', user.id)
+          .eq('is_active', true)
+          .maybeSingle()
+
+        if (roleWithCity?.cities?.name) {
+          setCityName(roleWithCity.cities.name + ' LGU')
+        }
       } catch (err) {
         console.error('City admin auth error:', err)
         router.push('/dashboard')
@@ -124,7 +137,7 @@ export default function CityAdminLayout({
             <Shield size={24} color="#F59E0B" />
           </div>
           <div>
-            <h1 className={styles.brandTitle}>Tangub City LGU</h1>
+            <h1 className={styles.brandTitle}>{cityName}</h1>
             <p className={styles.brandSubtitle}>Command Center</p>
           </div>
         </div>
@@ -177,7 +190,7 @@ export default function CityAdminLayout({
           </button>
 
           <div className={styles.headerLeft}>
-            <p className={styles.headerTitle}>Tangub City Government</p>
+            <p className={styles.headerTitle}>{cityName.replace(' LGU', '') + ' Government'}</p>
           </div>
 
           <div className={styles.headerRight}>
