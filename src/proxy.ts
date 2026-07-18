@@ -31,8 +31,13 @@ export async function proxy(request: NextRequest) {
 
   const isAuthPage = request.nextUrl.pathname.startsWith('/login')
   const isDashboard = request.nextUrl.pathname.startsWith('/dashboard')
+  const isCityAdmin = request.nextUrl.pathname.startsWith('/city-admin')
 
   if (!user && isDashboard) {
+    return NextResponse.redirect(new URL('/login', request.url))
+  }
+
+  if (!user && isCityAdmin) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
@@ -44,5 +49,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/login'],
+  matcher: ['/dashboard/:path*', '/city-admin/:path*', '/login'],
 }
