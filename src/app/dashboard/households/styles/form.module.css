@@ -1,0 +1,374 @@
+/* ============================================================
+   Household Form — New & Edit
+   Barangay IV, Tangub City — Orange Gradient Theme
+   ============================================================ */
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ── Page Header ─────────────────────────────────────────── */
+.pageHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #e2e0d9;
+  background: white;
+  color: #64748b;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all 0.15s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.backButton:hover {
+  border-color: #e8820c;
+  color: #e8820c;
+}
+
+.pageTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 2px;
+}
+
+.pageSubtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Alert Banners ───────────────────────────────────────── */
+.errorBanner {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  font-size: 14px;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.warningBanner {
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  display: flex;
+  gap: 10px;
+}
+
+.warningTitle {
+  margin: 0 0 3px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #92400e;
+}
+
+.warningText {
+  margin: 0;
+  font-size: 12px;
+  color: #b45309;
+}
+
+/* ── Section Card ────────────────────────────────────────── */
+.section {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e6df;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.sectionHeader {
+  padding: 13px 20px;
+  border-bottom: 1px solid #f1f0eb;
+  background: linear-gradient(to right, #fffbf5, #fef9f2);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #c2410c;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sectionBody {
+  padding: 20px;
+}
+
+/* ── Field Row ───────────────────────────────────────────── */
+.fieldRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.field {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.fieldHalf {
+  margin-bottom: 16px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.fieldRequired {
+  color: #e8820c;
+}
+
+/* ── Inputs ──────────────────────────────────────────────── */
+.input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box;
+  background: white;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:focus {
+  border-color: #e8820c;
+  box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.1);
+}
+
+.inputError {
+  border-color: #fca5a5;
+  background: #fff5f5;
+}
+
+.inputError:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.select:focus {
+  border-color: #e8820c;
+  box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.1);
+}
+
+.selectError {
+  border-color: #fca5a5;
+  background: #fff5f5;
+}
+
+.textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box;
+  background: white;
+  min-height: 88px;
+  resize: vertical;
+  transition: border-color 0.15s;
+  font-family: inherit;
+}
+
+.textarea:focus {
+  border-color: #e8820c;
+  box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.1);
+}
+
+.charCount {
+  text-align: right;
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+/* ── Field Error ─────────────────────────────────────────── */
+.fieldError {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.fieldErrorText {
+  font-size: 12px;
+  color: #dc2626;
+}
+
+/* ── Status Buttons ──────────────────────────────────────── */
+.statusGroup {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.statusButton {
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 2px solid #e2e0d9;
+  background: white;
+  color: #94a3b8;
+}
+
+.statusButtonActive {
+  border-color: currentColor;
+}
+
+/* ── Info Box ────────────────────────────────────────────── */
+.infoBox {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.infoBoxWarning {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.infoBoxDanger {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.infoBoxOrange {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+}
+
+.infoBoxText {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* ── Checkbox ────────────────────────────────────────────── */
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
+  accent-color: #e8820c;
+  flex-shrink: 0;
+}
+
+.checkboxTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.checkboxDesc {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 2px 0 0;
+}
+
+/* ── Action Buttons ──────────────────────────────────────── */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 32px;
+  padding-top: 8px;
+}
+
+.cancelButton {
+  padding: 10px 22px;
+  border-radius: 9px;
+  border: 1px solid #e2e0d9;
+  background: white;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.15s;
+}
+
+.cancelButton:hover {
+  border-color: #94a3b8;
+  color: #374151;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 26px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #f4a020 0%, #e8820c 50%, #c96008 100%);
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(232, 130, 12, 0.35);
+  transition: all 0.15s;
+}
+
+.saveButton:hover {
+  box-shadow: 0 6px 16px rgba(232, 130, 12, 0.45);
+  transform: translateY(-1px);
+}
+
+.saveButtonDisabled {
+  background: #f0a050;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}

@@ -1,0 +1,894 @@
+/* ============================================================
+   Blotter & Incident Management
+   Barangay IV, Tangub City — Orange Gradient Theme
+   ============================================================ */
+
+.container { padding: 0; }
+
+/* ── Header ──────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.headerIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f4a020 0%, #e8820c 50%, #c96008 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(232, 130, 12, 0.35);
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 2px;
+}
+
+.headerSubtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f4a020 0%, #e8820c 50%, #c96008 100%);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(232, 130, 12, 0.35);
+  transition: all 0.15s;
+}
+
+.addButton:hover {
+  box-shadow: 0 6px 16px rgba(232, 130, 12, 0.45);
+  transform: translateY(-1px);
+}
+
+/* ── Stats ───────────────────────────────────────────────── */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.statCard {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e6df;
+  padding: 14px 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 3px;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* ── Filter Bar ──────────────────────────────────────────── */
+.filterBar {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e6df;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.filterRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.searchWrapper {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 9px 12px 9px 34px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  background: #fafaf8;
+  transition: border-color 0.15s;
+  color: #0f172a;
+}
+
+.searchInput:focus {
+  border-color: #e8820c;
+  background: white;
+}
+
+.filterSelect {
+  padding: 9px 12px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: #fafaf8;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.filterSelect:focus { border-color: #e8820c; }
+
+.clearButton {
+  padding: 9px 14px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 13px;
+  background: white;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.clearButton:hover {
+  border-color: #e8820c;
+  color: #e8820c;
+}
+
+/* ── Table ───────────────────────────────────────────────── */
+.tableCard {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e6df;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.tableWrapper { overflow-x: auto; }
+
+.loadingState {
+  padding: 56px 24px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.emptyState {
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.emptyIcon {
+  display: block;
+  margin: 0 auto 14px;
+  opacity: 0.25;
+}
+
+.emptyText {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 0 0 14px;
+}
+
+.table { width: 100%; border-collapse: collapse; }
+
+.tableHead {
+  border-bottom: 1px solid #f1f0eb;
+  background: linear-gradient(to bottom, #fffbf5, #faf8f3);
+}
+
+.tableHead th {
+  padding: 13px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: #a09880;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.tableRow {
+  border-bottom: 1px solid #f8f7f3;
+  transition: background 0.12s;
+}
+
+.tableRow:nth-child(even) {
+  background: #fffbf5;
+}
+
+.tableRow:last-child { border-bottom: none; }
+.tableRow:hover { background: #fff3e0; }
+
+.tableCell {
+  padding: 13px 16px;
+  font-size: 14px;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.blotterNumber {
+  font-size: 13px;
+  font-weight: 700;
+  color: #e8820c;
+  font-family: monospace;
+  letter-spacing: 0.02em;
+}
+
+.complainantName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+  margin: 0 0 2px;
+}
+
+.incidentType {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* ── Status Badges ───────────────────────────────────────── */
+.statusFiled {
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  white-space: nowrap;
+}
+
+.statusSummoned {
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  background: #fefce8;
+  color: #ca8a04;
+  border: 1px solid #fde68a;
+  white-space: nowrap;
+}
+
+.statusMediation {
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+  white-space: nowrap;
+}
+
+.statusSettled {
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+  white-space: nowrap;
+}
+
+.statusReferred {
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  white-space: nowrap;
+}
+
+.statusDismissed {
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+/* ── Action Buttons ──────────────────────────────────────── */
+.actionGroup { display: flex; gap: 6px; }
+
+.viewButton {
+  padding: 5px 12px;
+  border-radius: 7px;
+  font-size: 13px;
+  color: #e8820c;
+  border: 1px solid #e8820c;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.15s;
+  display: inline-block;
+}
+
+.viewButton:hover { background: #fff7ed; }
+
+/* ── Form Styles ─────────────────────────────────────────── */
+.formContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #e2e0d9;
+  background: white;
+  color: #64748b;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all 0.15s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.backButton:hover {
+  border-color: #e8820c;
+  color: #e8820c;
+}
+
+.pageTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 2px;
+}
+
+.pageSubtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+.section {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e6df;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.sectionHeader {
+  padding: 13px 20px;
+  border-bottom: 1px solid #f1f0eb;
+  background: linear-gradient(to right, #fffbf5, #fef9f2);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #c2410c;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sectionBody { padding: 20px; }
+
+.fieldRow { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.field { margin-bottom: 16px; width: 100%; }
+
+.fieldHalf {
+  margin-bottom: 16px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.fieldRequired { color: #e8820c; }
+
+.input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box;
+  background: white;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:focus {
+  border-color: #e8820c;
+  box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.1);
+}
+
+.inputError {
+  border-color: #fca5a5;
+  background: #fff5f5;
+}
+
+.select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.select:focus {
+  border-color: #e8820c;
+  box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.1);
+}
+
+.textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box;
+  background: white;
+  min-height: 100px;
+  resize: vertical;
+  transition: border-color 0.15s;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.textarea:focus {
+  border-color: #e8820c;
+  box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.1);
+}
+
+.charCount {
+  text-align: right;
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.fieldError {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.fieldErrorText {
+  font-size: 12px;
+  color: #dc2626;
+}
+
+.errorBanner {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  font-size: 14px;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 32px;
+  padding-top: 8px;
+}
+
+.cancelButton {
+  padding: 10px 22px;
+  border-radius: 9px;
+  border: 1px solid #e2e0d9;
+  background: white;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.15s;
+}
+
+.cancelButton:hover {
+  border-color: #94a3b8;
+  color: #374151;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 26px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #f4a020 0%, #e8820c 50%, #c96008 100%);
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(232, 130, 12, 0.35);
+  transition: all 0.15s;
+}
+
+.saveButton:hover {
+  box-shadow: 0 6px 16px rgba(232, 130, 12, 0.45);
+  transform: translateY(-1px);
+}
+
+.saveButtonDisabled {
+  background: #f0a050;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ── Resident Search ─────────────────────────────────────── */
+.searchResultsBox {
+  border: 1px solid #e8e6df;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.searchResultItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #f8f7f3;
+  transition: background 0.12s;
+  background: white;
+}
+
+.searchResultItem:last-child { border-bottom: none; }
+.searchResultItem:hover { background: #fffbf5; }
+
+.residentAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f4a020, #c96008);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.residentName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+  margin: 0 0 2px;
+}
+
+.residentAddress {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* ── Selected Complainant Card ───────────────────────────── */
+.selectedCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #fffbf5;
+  border: 1px solid #fed7aa;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+.changeButton {
+  margin-left: auto;
+  padding: 5px 12px;
+  border-radius: 7px;
+  border: 1px solid #e2e0d9;
+  background: white;
+  color: #64748b;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.changeButton:hover {
+  border-color: #e8820c;
+  color: #e8820c;
+}
+
+/* ── Profile View ────────────────────────────────────────── */
+.profileCard {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e8e6df;
+  padding: 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.profileIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f4a020 0%, #e8820c 50%, #c96008 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(232, 130, 12, 0.3);
+}
+
+.profileTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 6px;
+  font-family: monospace;
+  letter-spacing: 0.02em;
+}
+
+.badgeGroup { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.infoRow {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f8f7f3;
+}
+
+.infoRow:last-child { border-bottom: none; }
+
+.infoLabel {
+  font-size: 13px;
+  color: #94a3b8;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.infoValue {
+  font-size: 13px;
+  color: #0f172a;
+}
+
+.infoEmpty {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.narrativeText {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  margin: 0;
+}
+/* ── Mobile Card List ────────────────────────────────────── */
+.cardList {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: #f8f7f3;
+}
+
+.blotterCard {
+  padding: 14px 16px;
+  border: 1px solid #f1f0eb;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: background 0.12s, box-shadow 0.12s;
+}
+
+.blotterCard:active {
+  background: #fffbf5;
+  box-shadow: 0 2px 8px rgba(232, 130, 12, 0.15);
+}
+
+.blotterCardIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f4a020, #c96008);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(232, 130, 12, 0.25);
+}
+
+.cardBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardBlotterNumber {
+  font-size: 13px;
+  font-weight: 700;
+  color: #e8820c;
+  font-family: monospace;
+  margin: 0 0 3px;
+}
+
+.cardComplainantName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 2px;
+}
+
+.cardMeta {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0 0 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.cardMetaDot {
+  color: #cbd5e1;
+}
+
+.cardRespondents {
+  font-size: 12px;
+  color: #374151;
+  margin: 0 0 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.cardViewButton {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 7px;
+  font-size: 12px;
+  color: #e8820c;
+  border: 1px solid #e8820c;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ── Responsive Breakpoints ──────────────────────────────── */
+@media (max-width: 768px) {
+  .header {
+    gap: 12px;
+  }
+
+  .headerLeft {
+    min-width: 0;
+  }
+
+  .headerTitle {
+    font-size: 17px;
+  }
+
+  .headerSubtitle {
+    font-size: 12px;
+  }
+
+  .addButton {
+    padding: 9px 13px;
+    font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filterRow {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .searchWrapper {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .filterSelect {
+    width: 100%;
+  }
+
+  .clearButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tableWrapper {
+    display: none;
+  }
+
+  .cardList {
+    display: flex;
+  }
+}

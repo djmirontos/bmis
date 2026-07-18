@@ -1,0 +1,219 @@
+/* ============================================================
+   Resident Profile Page
+   Barangay IV, Tangub City — Orange Gradient Theme
+   ============================================================ */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #e2e0d9;
+  background: white;
+  color: #64748b;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all 0.15s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.backButton:hover {
+  border-color: #e8820c;
+  color: #e8820c;
+}
+
+.pageTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  flex: 1;
+}
+
+.headerActions {
+  display: flex;
+  gap: 8px;
+}
+
+.editButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 15px;
+  border-radius: 9px;
+  border: 1px solid #e2e0d9;
+  background: white;
+  color: #374151;
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.15s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.editButton:hover {
+  border-color: #e8820c;
+  color: #e8820c;
+}
+
+/* ── Profile Card ────────────────────────────────────────── */
+.profileCard {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e8e6df;
+  padding: 24px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.profileAvatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f4a020 0%, #e8820c 50%, #c96008 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(232, 130, 12, 0.35);
+}
+
+.profileName {
+  font-size: 21px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 5px;
+}
+
+.profileMeta {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 12px;
+}
+
+.tagGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+
+.tagEmpty {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 4px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.statusActive {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.statusInactive {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+/* ── Section Card ────────────────────────────────────────── */
+.section {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e6df;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.sectionHeader {
+  padding: 13px 20px;
+  border-bottom: 1px solid #f1f0eb;
+  background: linear-gradient(to right, #fffbf5, #fef9f2);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #c2410c;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sectionBody {
+  padding: 4px 20px 12px;
+}
+
+/* ── Info Row ────────────────────────────────────────────── */
+.infoRow {
+  display: flex;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f8f7f3;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  font-size: 13px;
+  color: #94a3b8;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.infoValue {
+  font-size: 13px;
+  color: #0f172a;
+}
+
+.infoEmpty {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.footer {
+  font-size: 12px;
+  color: #94a3b8;
+  text-align: center;
+  margin: 8px 0 32px;
+}

@@ -1,0 +1,461 @@
+/* ============================================================
+   Settings Page
+   Barangay IV, Tangub City — Orange Gradient Theme
+   ============================================================ */
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.headerIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f4a020 0%, #e8820c 50%, #c96008 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(232, 130, 12, 0.35);
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 2px;
+}
+
+.headerSubtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Section ─────────────────────────────────────────────── */
+.section {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e6df;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.sectionHeader {
+  padding: 14px 20px;
+  border-bottom: 1px solid #f1f0eb;
+  background: linear-gradient(to right, #fffbf5, #fef9f2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #c2410c;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sectionBody {
+  padding: 20px;
+}
+
+/* ── Field Row ───────────────────────────────────────────── */
+.fieldRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.field {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.fieldHalf {
+  margin-bottom: 16px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.fieldNote {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+/* ── Inputs ──────────────────────────────────────────────── */
+.input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box;
+  background: white;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:focus {
+  border-color: #e8820c;
+  box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.1);
+}
+
+.inputSmall {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box;
+  background: white;
+  transition: border-color 0.15s;
+  text-align: right;
+}
+
+.inputSmall:focus {
+  border-color: #e8820c;
+  box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.1);
+}
+
+/* ── Logo Upload ─────────────────────────────────────────── */
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logoPreview {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  border: 2px solid #e2e0d9;
+  background: #fafaf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.logoPreviewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 6px;
+}
+
+.logoPlaceholder {
+  font-size: 11px;
+  color: #94a3b8;
+  text-align: center;
+  padding: 8px;
+}
+
+.logoActions {
+  flex: 1;
+}
+
+.logoUploadLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e0d9;
+  background: white;
+  color: #374151;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-bottom: 6px;
+}
+
+.logoUploadLabel:hover {
+  border-color: #e8820c;
+  color: #e8820c;
+}
+
+.logoNote {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Document Type Table ─────────────────────────────────── */
+.docTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.docTableHead th {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: #a09880;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #f1f0eb;
+  background: #fafaf8;
+}
+
+.docTableRow {
+  border-bottom: 1px solid #f8f7f3;
+  transition: background 0.12s;
+}
+
+.docTableRow:last-child {
+  border-bottom: none;
+}
+
+.docTableRow:hover {
+  background: #fffbf5;
+}
+
+.docTableCell {
+  padding: 12px;
+  font-size: 14px;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.docTypeName {
+  font-size: 13px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.docTypeFree {
+  font-size: 11px;
+  color: #16a34a;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 6px;
+}
+
+.feeInput {
+  width: 100px;
+  padding: 7px 10px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  text-align: right;
+  background: white;
+  transition: border-color 0.15s;
+}
+
+.feeInput:focus {
+  border-color: #e8820c;
+  box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.1);
+}
+
+.validityInput {
+  width: 70px;
+  padding: 7px 10px;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  text-align: right;
+  background: white;
+  transition: border-color 0.15s;
+}
+
+.validityInput:focus {
+  border-color: #e8820c;
+  box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.1);
+}
+
+/* ── Toggle ──────────────────────────────────────────────── */
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #f8f7f3;
+}
+
+.toggleRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.toggleLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.toggleDesc {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSlider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #e2e0d9;
+  border-radius: 24px;
+  transition: 0.2s;
+}
+
+.toggleSlider::before {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.toggle input:checked + .toggleSlider {
+  background: #e8820c;
+}
+
+.toggle input:checked + .toggleSlider::before {
+  transform: translateX(20px);
+}
+
+/* ── Save Button ─────────────────────────────────────────── */
+.saveRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 26px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #f4a020 0%, #e8820c 50%, #c96008 100%);
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(232, 130, 12, 0.35);
+  transition: all 0.15s;
+}
+
+.saveButton:hover {
+  box-shadow: 0 6px 16px rgba(232, 130, 12, 0.45);
+  transform: translateY(-1px);
+}
+
+.saveButtonDisabled {
+  background: #f0a050;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ── Success Banner ──────────────────────────────────────── */
+.successBanner {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  font-size: 14px;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.errorBanner {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  font-size: 14px;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cancelButton {
+  padding: 9px 20px;
+  border-radius: 9px;
+  border: 1px solid #e2e0d9;
+  background: white;
+  color: #64748b;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.cancelButton:hover {
+  border-color: #94a3b8;
+  color: #374151;
+}
+
+.successBanner {
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  font-size: 14px;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

@@ -1,0 +1,358 @@
+/* ============================================================
+   Household Profile Page
+   Barangay IV, Tangub City — Orange Gradient Theme
+   ============================================================ */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #e2e0d9;
+  background: white;
+  color: #64748b;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all 0.15s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.backButton:hover {
+  border-color: #e8820c;
+  color: #e8820c;
+}
+
+.pageTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  flex: 1;
+}
+
+.headerActions {
+  display: flex;
+  gap: 8px;
+}
+
+.editButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 15px;
+  border-radius: 9px;
+  border: 1px solid #e2e0d9;
+  background: white;
+  color: #374151;
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.15s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.editButton:hover {
+  border-color: #e8820c;
+  color: #e8820c;
+}
+
+.deleteButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 15px;
+  border-radius: 9px;
+  border: 1px solid #fecaca;
+  background: white;
+  color: #dc2626;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.deleteButton:hover {
+  background: #fef2f2;
+}
+
+.deleteButtonDisabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Alert Banners ───────────────────────────────────────── */
+.errorBanner {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.warningBanner {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.bannerText {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* ── Profile Card ────────────────────────────────────────── */
+.profileCard {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e8e6df;
+  padding: 24px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.profileIcon {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f4a020 0%, #e8820c 50%, #c96008 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(232, 130, 12, 0.35);
+}
+
+.householdNumber {
+  font-size: 22px;
+  font-weight: 700;
+  color: #e8820c;
+  margin: 0 0 5px;
+  font-family: monospace;
+  letter-spacing: 0.02em;
+}
+
+.householdAddress {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 10px;
+}
+
+.profileMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.statusBadge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge4ps {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+
+.memberMeta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ── Section Card ────────────────────────────────────────── */
+.section {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e6df;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.sectionHeader {
+  padding: 13px 20px;
+  border-bottom: 1px solid #f1f0eb;
+  background: linear-gradient(to right, #fffbf5, #fef9f2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #c2410c;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sectionAction {
+  font-size: 12px;
+  color: #e8820c;
+  text-decoration: none;
+  padding: 4px 10px;
+  border: 1px solid #e8820c;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.sectionAction:hover {
+  background: #fff7ed;
+}
+
+.sectionActionDisabled {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.sectionBody {
+  padding: 4px 20px 12px;
+}
+
+/* ── Info Row ────────────────────────────────────────────── */
+.infoRow {
+  display: flex;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f8f7f3;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  font-size: 13px;
+  color: #94a3b8;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.infoValue {
+  font-size: 13px;
+  color: #0f172a;
+}
+
+.infoEmpty {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+/* ── Member List ─────────────────────────────────────────── */
+.memberList {
+  padding: 8px 0;
+}
+
+.memberRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid #f8f7f3;
+  transition: background 0.12s;
+}
+
+.memberRow:last-child {
+  border-bottom: none;
+}
+
+.memberRow:hover {
+  background: #fffbf5;
+}
+
+.memberAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f4a020 0%, #e8820c 50%, #c96008 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(232, 130, 12, 0.25);
+}
+
+.memberName {
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.memberMeta2 {
+  margin: 0;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.memberTags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.memberTag {
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+
+.memberChevron {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin-left: 4px;
+}
+
+.emptyMembers {
+  padding: 32px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.footer {
+  font-size: 12px;
+  color: #94a3b8;
+  text-align: center;
+  margin: 8px 0 32px;
+}
