@@ -14,6 +14,9 @@ export interface PublicSettings {
   city_logo_url: string | null
   contact_number: string | null
   email_address: string | null
+  barangay_id: string | null
+  zip_code: string | null
+  theme_color: string | null
 }
 
 const defaultSettings: PublicSettings = {
@@ -25,6 +28,9 @@ const defaultSettings: PublicSettings = {
   city_logo_url: null,
   contact_number: null,
   email_address: null,
+  barangay_id: null,
+  zip_code: null,
+  theme_color: null,
 }
 
 const SettingsContext = createContext<{
@@ -55,6 +61,9 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
           city_logo_url: data.city_logo_url ?? null,
           contact_number: data.contact_number ?? null,
           email_address: data.email_address ?? null,
+          barangay_id: data.barangay_id ?? null,
+          zip_code: data.zip_code ?? null,
+          theme_color: data.theme_color ?? null,
         })
       }
     } catch {
